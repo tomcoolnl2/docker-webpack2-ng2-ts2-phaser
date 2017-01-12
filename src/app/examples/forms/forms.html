@@ -1,0 +1,38 @@
+<md-card>
+    <md-card-title>Inputs</md-card-title>
+    <md-card-content>
+
+        <p>
+            <md-input placeholder="Name"></md-input>
+        </p>
+
+        <p>
+            <md-input #nickname placeholder="Name" maxlength="100">
+                <md-hint align="bottom">
+                {{nickname.characterCount}} / 100
+                </md-hint>
+            </md-input>
+        </p>
+
+    </md-card-content>
+</md-card>
+
+
+<md-card>
+    <md-card-title>Checkboxes</md-card-title>
+    <md-card-content>
+        <md-checkbox>Unchecked</md-checkbox>
+        <md-checkbox [checked]="true">Checked</md-checkbox>
+        <md-checkbox [indeterminate]="true">Indeterminate</md-checkbox>
+        <md-checkbox [disabled]="true">Disabled</md-checkbox>
+    </md-card-content>
+</md-card>
+
+ <md-card>
+    <md-card-title>Radio Buttons</md-card-title>
+    <md-card-content>
+        <md-radio-button name="symbol">Hello</md-radio-button>
+        <md-radio-button name="symbol">World</md-radio-button>
+        <md-radio-button name="symbol" disabled>Disabled</md-radio-button>
+     </md-card-content>
+</md-card>

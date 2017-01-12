@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "sourceMap": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": true,
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "baseUrl": "./src",
+    "outDir": "./compiled",
+    "paths": {
+        "root/*": ["app/root/*"],
+        "shared/*": ["app/shared/*"],
+        "common/*": ["app/shared/*"],
+        "store/*": ["app/store/*"],
+        "store": ["app/store"]
+    }
+  },
+
+  "files": [
+    "src/app/bootstrap.ts",
+    "src/app/examples/examples.module.ts",
+    "src/app/custom_typings.d.ts"
+  ],
+
+   "angularCompilerOptions": {
+    "genDir": "./compiled",
+    "skipMetadataEmit" : true
+    },
+ "exclude": [
+    "node_modules"
+  ]
+}
+
+
+
+
