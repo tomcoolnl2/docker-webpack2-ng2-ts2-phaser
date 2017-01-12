@@ -1,8 +1,9 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var app = express();
+var settings = require('./settings/settings');
 
-mongoose.connect('mongodb://localhost:27017/ng-game')
+mongoose.connect(settings.URL)
 
 var db = mongoose.connection;
 db.on('error', function (err) {
@@ -17,21 +18,20 @@ db.once('open', function () {
 var BlogPostSchema = require('./schema/blogpost.schema')(mongoose.Schema);
 var PostModel = mongoose.model('BlogPost', BlogPostSchema)
 
-var pm = new PostModel({
+var BlogPostModel = new PostModel({
 	title: 'TEST',
 	body: "Shiny",
-	date: new Date()
+	date: Date.now()
 });
 
-pm.save()
+BlogPostModel.save()
 
 app.get('/', function (req, res) {
-	PostModel.find(function (err, kittens) {
+	BlogPostModel.find(function (err, blogPosts) {
 		if (err) return console.error(err);
-		console.log(kittens);
-		res.json(kittens)
+		res.json(blogPosts)
 	});
 
 })
 
-app.listen(3000)
+app.listen(settings.PORT);
