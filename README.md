@@ -1,5 +1,3 @@
-# angular2-webpack2-typescript2
-Simple Angular2 starter using Webpack2/Typescript2/Material2
 
 # Table of Contents
 * [Introduction](#introduction)
@@ -20,19 +18,12 @@ Simple Angular2 starter using Webpack2/Typescript2/Material2
 
 
 # Introduction
-The sample application features Angular2-Material demos
+The sample application features an Phaser game build on top of Angular2.
 
 A Docker-file is used so you can run the commands inside the container if you wish to.
 
-* For MacOS, please use `Docker for Mac`
-* For Windows, please use `Docker for Windows`
-* For Linux, just use `Docker` :)
 
 ## Quick Start
-```bash
-# Clone repo and enter folder
-git clone https://github.com/spock123/angular2-webpack2-typescript2.git
-cd angular2-webpack2-typescript2
 
 # Initialize project
 yarn  clean
@@ -59,6 +50,7 @@ yarn serve:dist
 ## Tech Stack
 The repo uses the following technologies:
 
+* Docker
 * Angular
 * Webpack
 * Typescript
@@ -86,7 +78,6 @@ The build process performs the following optimizations:
 * Bundles application into `app`, `vendor` and `polyfills` bundles
 * Minifys/Uglify bundles
 * Creates gzipped versions of bundles/asset files
-* Creates ServiceWorker and AppCache (booh!) files with bundled assets as static cache
 
 
 # Getting Started
@@ -136,14 +127,3 @@ Vital parts of a real world application setup have been omitted due to various r
 
 * Testing
 * Deployment/Staging
-
-
-
-# Acknowledgements
-
-* <a href="https://github.com/gdi2290" target="_new">Patrick Stableton</a>
-* <a href="https://github.com/AngularClass/angular2-webpack-starter" target="_new">Angular2-Webpack-Starter</a>
-* <a href="https://github.com/angular-redux/ng2-redux" target="new">Ng2-Redux</a>
-* <a href="https://github.com/brandonroberts/angular2-router-loader">Angular2-router-loader</a>
-* <a href ="https://github.com/reactjs/redux">Redux</a>
-* <a href="https://github.com/angular/material2">Angular2 Material</a># docker-webpack2-ng2-ts2-phaser
