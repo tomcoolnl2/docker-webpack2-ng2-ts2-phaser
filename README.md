@@ -1,22 +1,4 @@
 
-# Table of Contents
-* [Introduction](#introduction)
-   * [Quick Start Docker](#quick-start)
-* [Features](#features)
-  * [Tech Stack] (#tech-stack)
-  * [Application] (#application)
-  * [Build Optimizations] (#build-optimizations)
-* [Getting Started](#getting-started)
-  * [Dependencies] (#dependencies)
-* [Commands] (#commands)
-   * [Development] (#development)
-   * [Build] (#build)
-   * [Serve Production Build] (#serve-production-build)
-   * [Linting] (#linting)
-* [Omissions] (#omissions)
-* [Acknowledgements] (#acknowledgements)
-
-
 # Introduction
 The sample application features an Phaser game build on top of Angular2.
 
