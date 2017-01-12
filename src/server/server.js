@@ -1,37 +1,23 @@
-var express = require('express');
-var mongoose = require('mongoose');
-var app = express();
-var settings = require('./settings/settings');
+let express = require('express');
+let mongoose = require('mongoose');
+let settings = require('./settings/settings');
+let app = express();
+let ContestantSchema = require('./schema/contestant.schema')(mongoose.Schema);
 
-mongoose.connect(settings.URL)
-
-var db = mongoose.connection;
-db.on('error', function (err) {
-	console.log(err)
-})
-
-db.once('open', function () {
-	console.log('opened')
-})
-
-
-var BlogPostSchema = require('./schema/blogpost.schema')(mongoose.Schema);
-var PostModel = mongoose.model('BlogPost', BlogPostSchema)
-
-var BlogPostModel = new PostModel({
+let ContestantModelFromSchema = mongoose.model('Contestant', ContestantSchema)
+let ContestantModel = new ContestantModelFromSchema({
 	title: 'TEST',
-	body: "Shiny",
+	body: "blah",
 	date: Date.now()
 });
 
-BlogPostModel.save()
+mongoose.connect(settings.URL);
+ContestantModel.save();
 
-app.get('/', function (req, res) {
-	BlogPostModel.find(function (err, blogPosts) {
-		if (err) return console.error(err);
-		res.json(blogPosts)
-	});
-
-})
+app.get('/', (request, result) => {
+	ContestantModelFromSchema.find((error, contestants) => error 
+									? console.error(error) 
+									: result.json(contestants));
+});
 
 app.listen(settings.PORT);
