@@ -2,9 +2,8 @@ let express = require('express');
 let mongoose = require('mongoose');
 let settings = require('./settings/settings');
 let app = express();
-let ContestantSchema = require('./schema/contestant.schema')(mongoose.Schema);
+let ContestantModelFromSchema = require('./model/contestant.model')(mongoose);
 
-let ContestantModelFromSchema = mongoose.model('Contestant', ContestantSchema)
 let ContestantModel = new ContestantModelFromSchema({
 	title: 'TEST',
 	body: "blah",
