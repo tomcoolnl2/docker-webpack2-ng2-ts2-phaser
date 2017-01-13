@@ -17,8 +17,20 @@ exports.test = () => {
 	});
 };
 
-exports.find = () => {
+exports.find = result => {
 	Contestant.find((error, contestants) => error
 			? console.error(error)
 			: result.json(contestants));
 };
+
+exports.create = (contestant) => {
+
+};
+
+exports.update = (id, contestant) => {
+
+};
+
+exports.delete = (id) => {
+		
+}
