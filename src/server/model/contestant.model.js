@@ -1,7 +1,7 @@
 
-module.exports = Mongoose => Mongoose.model('Contestant', new Mongoose.Schema({
-	// __id: Mongoose.Schema.ObjectId,
-	title: String,
-	body: String,
-	date: Date
-}));
+module.exports = Schema => new Schema({
+	userName: String,
+	firstName: String,
+	lastName: String,
+	emailAddress: String
+});
