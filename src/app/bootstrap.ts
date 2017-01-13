@@ -14,6 +14,3 @@ function  main(): any {
 }
 
 document.addEventListener('DOMContentLoaded', main);
-
-
-
