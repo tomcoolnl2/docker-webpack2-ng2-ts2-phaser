@@ -48,7 +48,6 @@ module.exports = env => {
 
     module: {
 
-
       loaders: [
         loaders.TypescriptLoader({ aot: env && env.aot ? true : false }),
         loaders.JsonLoader(),
@@ -56,9 +55,11 @@ module.exports = env => {
         loaders.FontLoader(),
         loaders.HtmlLoader(),
         loaders.SassLoader(),
-        loaders.SvgLoader()
+        loaders.SvgLoader(),
+        loaders.PixiLoader(),
+        loaders.PhaserSplitLoader(),
+        loaders.P2Loader()
       ]
-
     },
 
     plugins: [
@@ -76,20 +77,16 @@ module.exports = env => {
 
       new NamedModulesPlugin(),
 
-
       new webpack.LoaderOptionsPlugin({
         minimize: true,
         debug: false
       }),
-
 
       new WebpackMd5Hash(),
 
       // Prevent inclusion of duplicate code in the bundle
       // There is a bug in Webpack which breaks the build.. commented out for now
       // new DedupePlugin(),
-
-
 
       new UglifyJsPlugin({
         exclude: [
@@ -107,8 +104,6 @@ module.exports = env => {
         comments: false
       }),
 
-
-
       new HtmlWebpackPlugin({
         template: 'src/index.ejs',
         chunksSortMode: helpers.packageSort(['polyfills', 'vendor', 'app']),
@@ -122,8 +117,6 @@ module.exports = env => {
           minifyCSS: true
         }
       }),
-
-
 
       new CompressionPlugin({
         regExp: /\.css$|\.html$|\.js$|\.woff$|\.map$/,
@@ -161,8 +154,6 @@ module.exports = env => {
 
     })
     ],
- 
-   
 
     node: {
       global: 'window',
@@ -174,6 +165,7 @@ module.exports = env => {
     }
 
   });
-  console.log(config);
+
+  // console.log(config);
   return config;
 };

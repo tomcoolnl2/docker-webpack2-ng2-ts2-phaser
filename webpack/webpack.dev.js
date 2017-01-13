@@ -3,19 +3,18 @@
  * ****************************************** */
 
 'use strict';
-const path = require('path');
-const webpackMerge = require('webpack-merge');
-const helpers = require('./helpers');
-const loaders = require('./webpack-loaders');
-const commonConfig = require('./webpack.common.js')
-
+const path              = require('path');
+const webpackMerge      = require('webpack-merge');
+const helpers           = require('./helpers');
+const loaders           = require('./webpack-loaders');
+const commonConfig      = require('./webpack.common.js')
 
 
 // Webpack plugins
-const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const DefinePlugin = require('webpack/lib/DefinePlugin');
-const NamedModulesPlugin = require('webpack/lib/NamedModulesPlugin');
+const ForkCheckerPlugin     = require('awesome-typescript-loader').ForkCheckerPlugin;
+const HtmlWebpackPlugin     = require('html-webpack-plugin');
+const DefinePlugin          = require('webpack/lib/DefinePlugin');
+const NamedModulesPlugin    = require('webpack/lib/NamedModulesPlugin');
 
 
 // Constants
@@ -28,9 +27,7 @@ var METADATA = webpackMerge(commonConfig.metadata, {
     HMR: HMR
 });
 
-
 module.exports = env => {
-
 
     let config = webpackMerge(commonConfig, {
         metadata: METADATA,
@@ -46,7 +43,6 @@ module.exports = env => {
 
         module: {
 
-
             loaders: [
                 loaders.TypescriptLoader(),
                 loaders.JsonLoader(),
@@ -54,11 +50,12 @@ module.exports = env => {
                 loaders.FontLoader(),
                 loaders.HtmlLoader(),
                 loaders.SassLoader(),
-                loaders.SvgLoader()
+                loaders.SvgLoader(),
+                loaders.PixiLoader(),
+                loaders.PhaserSplitLoader(),
+                loaders.P2Loader()
             ]
-
         },
-
 
         plugins: [
 
@@ -82,10 +79,7 @@ module.exports = env => {
                 chunksSortMode: 'dependency',
                 filename: 'index.html'
             })
-
         ],
-
-
 
         devServer: {
             port: METADATA.port,
@@ -115,7 +109,8 @@ module.exports = env => {
             setImmediate: false
         }
     });
-    console.log(config);
+    
+    // console.log(config);
     return config;
 
 }

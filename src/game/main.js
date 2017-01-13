@@ -2,7 +2,7 @@ import 'pixi';
 import 'p2';
 import Phaser from 'phaser';
 
-import './scss/main.scss';
+// import './scss/main.scss';
 
 import GameState from './states/Game';
 

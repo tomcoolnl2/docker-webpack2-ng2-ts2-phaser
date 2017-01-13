@@ -23,7 +23,6 @@ import { IAppState, rootReducer,
          enhancers, middleware,
          enableBatching }                       from './store';
 
-
 // Top level routing
 const appRoutes: Routes = [
      { path: '', component: StartComponent },

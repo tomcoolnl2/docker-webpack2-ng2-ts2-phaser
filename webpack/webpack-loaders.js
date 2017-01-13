@@ -96,14 +96,36 @@ var TypescriptLoader = function (params) {
         test: /\.ts$/,
         loaders: ['awesome-typescript-loader',
             'angular2-template-loader',
-                    routerLoader
+            routerLoader
 
         ],
         exclude: [/\.(spec|e2e|async)\.ts$/]
     };
 };
 
+//** START Phaser loaders **//
+var PixiLoader = function () {
+    console.log('********** Pixi ********** ')
+    return { 
+        test: /pixi\.js$/, 
+        loader: 'expose-loader?PIXI'
+    };
+};
 
+var PhaserSplitLoader = function () {
+    return {
+        test: /phaser-split\.js$/, 
+        loader: 'expose-loader?Phaser'
+    };
+};
+
+var P2Loader = function () {
+    return {
+        test: /p2\.js$/, 
+        loader: 'expose-loader?p2'
+    };
+};
+//** END Phaser loaders **//
 
 module.exports = {
     CssLoader: CssLoader,
@@ -116,5 +138,8 @@ module.exports = {
     SvgLoader: SvgLoader,
     TsLintLoader: TsLintLoader,
     TypescriptLoader: TypescriptLoader,
-    SassLoader: SassLoader
+    SassLoader: SassLoader,
+    PixiLoader: PixiLoader,
+    PhaserSplitLoader: PhaserSplitLoader,
+    P2Loader: P2Loader
 };

@@ -9,7 +9,9 @@ let ContestantController = require('./controller/contestant.controller');
 mongoose.Promise = global.Promise;
 mongoose.connect(settings.URL);
 
-// ContestantController.test();
+ContestantController.test();
+ContestantController.test();
+ContestantController.test();
 
 app.use('/', routes);
 
