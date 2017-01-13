@@ -8,9 +8,15 @@ import { NgReduxRouter }                from 'ng2-redux-router';
     templateUrl:'app.html'
 })
 
+interface MenuItem {
+    name,
+    icon,
+    link
+}
+
 export class AppComponent implements OnInit  {
 
-    public menu: Object[] = [
+    public menu: MenuItem[] = [
         { name: 'Forms', icon: 'assignment ind', link: '/examples/forms'},
         { name: 'Buttons', icon: 'assignment ind', link: '/examples/buttons'},
         { name: 'Icons', icon: 'assignment ind', link: '/examples/icons' },
