@@ -19,7 +19,9 @@
     "docker:serve:dist": "docker-compose run --service-ports frontend npm run serve-dist",
     "aot": "./node_modules/.bin/ngc -p tsconfig.aot.json"
   },
-  "dependencies": {},
+  "dependencies": {
+    "phaser": "^2.6.2"
+  },
   "devDependencies": {
     "@angular/common": "4.0.0-beta.1",
     "@angular/compiler": "4.0.0-beta.1",
