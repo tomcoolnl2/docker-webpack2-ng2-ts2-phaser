@@ -8,7 +8,9 @@ A Docker-file is used so you can run the commands inside the container if you wi
 ## Quick Start
 
 # Initialize project
-yarn  clean
+`docker-compose build`
+`docker-compose up` (this will automaticly run `yarn serve`)
+`nodemon src/server/server.js` (only in dev mode - it wil update when a server side script is saved)
 
 # Install dependencies
 yarn install
@@ -24,8 +26,8 @@ yarn serve:dist
 
 # 
 # Open localhost:8080 and enjoy the show
+# Use localhost:3000 and enjoy the server
 ```
-
 
 # Features
 
@@ -33,24 +35,13 @@ yarn serve:dist
 The repo uses the following technologies:
 
 * Docker
-* Angular
+* Angular2
 * Webpack
-* Typescript
+* Typescript2
 * Angular2 Material
 * Redux store with Ng2-Redux
 * SASS for styling
-* Code checking with Tslint and Codelyzer
-
-## Application
-The demo application showcases:
-
-* Angular module composition using shared modules.
-* Angular module routing
-* Angular2-Material components gathered in one shared module
-* Application demos the material components as of current version
-* Uses ServiceWorker or AppCache for static caching
-* AoT template compilation
-* Lazy loading module
+* Code checking with Tslint and Codelyzere
 
 ## Build Optimizations
 The build process performs the following optimizations:
@@ -61,51 +52,7 @@ The build process performs the following optimizations:
 * Minifys/Uglify bundles
 * Creates gzipped versions of bundles/asset files
 
-
-# Getting Started
-## Dependencies
-
-* `node` and `npm/yarn`
-* Ensure you're running the latest versions Node (v.4 or higher)  and NPM (v.3 or higher), or yarn
-
-# Commands
-
-## Dependencies
-Update dependencies if you add/remove packages in package.json
-```bash
-yarn install
-```
-
-## Development
-Serve development build with live reload on `localhost:8080`
-```bash
-yarn serve
-```
-
-## Build
-Create production build in `dist/public`
-```bash
-
-# Production build with AoT compilation
-yarn build
-
-```
-
-## Serve production build
-Serve the production built application on `localhost:8080`
-```bash
-yarn serve:dist
-```
-
-## Linting
-Check your coding styles with with TsLint and Codelyzer:
-
-```bash
-yarn tslint
-```
-
-# Omissions
-Vital parts of a real world application setup have been omitted due to various reasons:
+# TODO
 
 * Testing
 * Deployment/Staging
