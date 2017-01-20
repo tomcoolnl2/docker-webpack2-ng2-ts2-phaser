@@ -9,7 +9,9 @@ A Docker-file is used so you can run the commands inside the container if you wi
 
 # Initialize project
 `docker-compose build`
+
 `docker-compose up` (this will automaticly run `yarn serve`)
+
 `nodemon src/server/server.js` (only in dev mode - it wil update when a server side script is saved)
 
 # Install dependencies
@@ -25,8 +27,8 @@ yarn build
 yarn serve:dist
 
 # 
-# Open localhost:8080 and enjoy the show
-# Use localhost:3000 and enjoy the server
+Open localhost:8080 and enjoy the show
+Use localhost:3000 and enjoy the server
 ```
 
 # Features
