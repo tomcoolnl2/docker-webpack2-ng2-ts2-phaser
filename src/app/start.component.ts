@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { NgRedux, IAppState, select }    from './store/index';
+import { NgRedux, IAppState, select } from './store/index';
 import { GlobalActions } from './actions/index';
 
 @Component({
@@ -14,14 +14,14 @@ import { GlobalActions } from './actions/index';
 })
 export class StartComponent implements OnInit {
 
-    //public globalState$: Observable<any>;
+    // public globalState$: Observable<any>;
     @select('globalState') globalState$;
 
     constructor(
-      //  private store: NgRedux<IAppState>,
+        //  private store: NgRedux<IAppState>,
         public globalActions: GlobalActions) { }
 
     ngOnInit() {
-    //    this.globalState$ = this.store.select('globalState');
+        // this.globalState$ = this.store.select('globalState');
     }
 }

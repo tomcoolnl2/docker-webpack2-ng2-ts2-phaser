@@ -1,45 +1,47 @@
-import { NgModule }                             from '@angular/core';
-import { BrowserModule  }                       from '@angular/platform-browser';
-import { Routes, RouterModule }                 from '@angular/router';
-import { HttpModule, Http }                     from '@angular/http';
-
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { Routes, RouterModule } from '@angular/router';
+import { HttpModule, Http } from '@angular/http';
 
 // Application modules
-import { SharedModule }                         from './shared/shared.module';
-import { ExamplesModule }                       from './examples/examples.module';
+import { SharedModule } from './shared/shared.module';
+import { ExamplesModule } from './examples/examples.module';
 
 // App level component
-import { AppComponent }                         from './app.component';
-import { StartComponent }                       from './start.component';
-
+import { AppComponent } from './app.component';
+import { StartComponent } from './start.component';
 
 // Redux
-import { NgReduxModule, NgRedux,
-         DevToolsExtension }                    from 'ng2-redux';
-import { _NgRedux }                             from './store/_ng-redux';
-import { NgReduxRouter }                        from 'ng2-redux-router';
-import { ACTION_PROVIDERS }                     from './actions';
-import { IAppState, rootReducer,
-         enhancers, middleware,
-         enableBatching }                       from './store';
+import {
+    NgReduxModule, NgRedux,
+    DevToolsExtension
+} from 'ng2-redux';
+import { _NgRedux } from './store/_ng-redux';
+import { NgReduxRouter } from 'ng2-redux-router';
+import { ACTION_PROVIDERS } from './actions';
+import {
+    IAppState, rootReducer,
+    enhancers, middleware,
+    enableBatching
+} from './store';
 
 // Top level routing
 const appRoutes: Routes = [
-     { path: '', component: StartComponent },
-     { path: 'examples',  loadChildren: './examples/examples.module#ExamplesModule' }
+    { path: '', component: StartComponent },
+    { path: 'examples', loadChildren: './examples/examples.module#ExamplesModule' }
 ];
 
 // Providers
 let providers = [
-{ provide: NgRedux, useClass: _NgRedux },
- NgReduxRouter,
- DevToolsExtension,
- ACTION_PROVIDERS
+    { provide: NgRedux, useClass: _NgRedux },
+    NgReduxRouter,
+    DevToolsExtension,
+    ACTION_PROVIDERS
 ];
 
 @NgModule({
 
-     imports: [
+    imports: [
         BrowserModule,
         HttpModule,
         NgReduxModule.forRoot(),
@@ -54,21 +56,24 @@ let providers = [
     ],
 
     providers: providers,
-    bootstrap:    [ AppComponent ]
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 
-   constructor(
-       ngRedux: NgRedux<IAppState>,
+    constructor(
+        ngRedux: NgRedux<IAppState>,
         devTool: DevToolsExtension,
         http: Http
-       ) {
+    ) {
 
         ngRedux.configureStore(
-           enableBatching(rootReducer),
-           {},
-           middleware,
-            [ ...enhancers, devTool.isEnabled() && ENV !=='production' ? devTool.enhancer() : f => f]
+            enableBatching(rootReducer),
+            {},
+            middleware,
+            [
+                ...enhancers,
+                devTool.isEnabled() && ENV !== 'production' ? devTool.enhancer() : f => f
+            ]
         );
-  }
+    }
 }
