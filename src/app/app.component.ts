@@ -2,10 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgReduxRouter } from 'ng2-redux-router';
 
-import 'pixi';
-import 'p2';
-import Phaser from 'phaser';
-
 @Component({
     selector: 'app',
     templateUrl: 'app.html'
