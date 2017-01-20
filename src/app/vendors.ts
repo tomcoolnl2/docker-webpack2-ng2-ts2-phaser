@@ -28,11 +28,6 @@ import { NgRedux, select } from 'ng2-redux';
 // Hammer.js - needed by some of the Material modules
 import 'hammerjs/hammer.js';
 
-// Phaser dependencies
-import 'pixi';
-import 'p2';
-import Phaser from 'phaser';
-
 if ( ENV === 'production') {
   // Production
 

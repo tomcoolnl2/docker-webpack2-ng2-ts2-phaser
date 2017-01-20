@@ -1,9 +1,6 @@
 
 import { Component } from '@angular/core';
 
-import Phaser from 'phaser';
-
-console.log('Phaser : ', Phaser);
 
 // import GameState from './states/game.state';
 
