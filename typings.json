@@ -1,5 +1,8 @@
 {
   "globalDependencies": {
     "pixi.js": "github:pixijs/pixi-typescript/pixi.js.d.ts#v4.1.0"
+  },
+  "globalDevDependencies": {
+    "pixi.js": "registry:dt/pixi.js#4.3.0+20161230173829"
   }
 }

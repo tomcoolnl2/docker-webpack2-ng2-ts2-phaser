@@ -26,9 +26,8 @@ module.exports = {
     cache: true,
     entry: {
         'polyfills': './src/app/polyfills.ts',
-        'vendor': './src/app/vendors.ts',
-        'app': './src/app/bootstrap.ts',
-        vendor: ['pixi', 'p2', 'phaser']
+        'vendor': ['./src/app/vendors.ts'],
+        'app': './src/app/bootstrap.ts'
     },
 
     resolve: {
@@ -43,7 +42,6 @@ module.exports = {
             'pixi': pixi,
             'p2': p2,
             'phaser': phaser
-
         }
     },
 
