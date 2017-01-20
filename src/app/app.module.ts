@@ -10,6 +10,7 @@ import { ExamplesModule } from './examples/examples.module';
 // App level component
 import { AppComponent } from './app.component';
 import { StartComponent } from './start.component';
+import { GameComponent } from './game/game.component';
 
 // Redux
 import {
@@ -52,7 +53,8 @@ let providers = [
 
     declarations: [
         AppComponent,
-        StartComponent
+        StartComponent,
+        GameComponent
     ],
 
     providers: providers,
